@@ -1,0 +1,16 @@
+# Versions used on Kaggle (Python 3.13). Unpinned packages: Kaggle default image of November 2026.
+torch==2.11.*
+torchvision
+timm==1.0.29
+segmentation-models-pytorch==0.5.0
+transformers
+albumentations==2.0.8
+ultralytics==8.4.*
+pycocotools
+numpy
+pandas
+scipy
+scikit-learn
+opencv-python-headless
+matplotlib
+openpyxl

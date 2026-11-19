@@ -1,0 +1,16 @@
+# Never commit weights, photographs, crops, masks or result tables
+*.pt
+*.pth
+*.onnx
+*.npz
+*.pkl
+*.pkl.gz
+*.zip
+*.jpg
+*.jpeg
+*.png
+*.csv
+*.csv.gz
+*.xlsx
+.ipynb_checkpoints/
+__pycache__/
