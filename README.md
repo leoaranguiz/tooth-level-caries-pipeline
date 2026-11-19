@@ -31,39 +31,39 @@ The notebooks of section 1 build the curated datasets from the source photograph
 ### 1. Datasets
 | # | Notebook | Kaggle notebook | Inputs | What it does |
 |---|---|---|---|---|
-| 1.1 | `notebooks/11_curated_datasets.ipynb` | `datasets-limpios-icdas-segmentacion` | source photographs; intermediate label files | Child identifiers, folds grouped by child, stage 1 photographs and masks |
-| 1.2 | `notebooks/12_reserved_children.ipynb` | `seleccion-reserva-pipeline` | source photographs; 1.1 | Pre-specified selection of the 10 reserved children |
-| 1.3 | `notebooks/13_stage2_crops.ipynb` | `base-icdas-v4` | source photographs; earlier crop base | 3466 crops at native resolution, labels and folds |
-| 1.4 | `notebooks/14_children_in_both_stages.ipynb` | `ninos-68-vs-81` | 1.1, 1.3 | Children in both datasets and in the chained evaluation |
+| 1.1 | `11_curated_datasets.ipynb` | `datasets-limpios-icdas-segmentacion` | source photographs; intermediate label files | Child identifiers, folds grouped by child, stage 1 photographs and masks |
+| 1.2 | `12_reserved_children.ipynb` | `seleccion-reserva-pipeline` | source photographs; 1.1 | Pre-specified selection of the 10 reserved children |
+| 1.3 | `13_stage2_crops.ipynb` | `base-icdas-v4` | source photographs; earlier crop base | 3466 crops at native resolution, labels and folds |
+| 1.4 | `14_children_in_both_stages.ipynb` | `ninos-68-vs-81` | 1.1, 1.3 | Children in both datasets and in the chained evaluation |
 
 ### 2. Training (GPU)
 | # | Notebook | Kaggle notebook | Inputs | What it does |
 |---|---|---|---|---|
-| 2.1 | `notebooks/21_stage1_segmentation_cv.ipynb` | `benchmark-segmentacion-cv-nino` | 1.1 | Four segmentation models, 5 folds; out-of-fold masks and metrics with 95% CI |
-| 2.2 | `notebooks/22_stage2_classification_cv.ipynb` | `benchmark-icdas-v4` | 1.3 | Seven classifiers, 5 folds; out-of-fold predictions and metrics with 95% CI |
+| 2.1 | `21_stage1_segmentation_cv.ipynb` | `benchmark-segmentacion-cv-nino` | 1.1 | Four segmentation models, 5 folds; out-of-fold masks and metrics with 95% CI |
+| 2.2 | `22_stage2_classification_cv.ipynb` | `benchmark-icdas-v4` | 1.3 | Seven classifiers, 5 folds; out-of-fold predictions and metrics with 95% CI |
 
 ### 3. Analyses (CPU, except 3.1 and 3.7)
 | # | Notebook | Kaggle notebook | Inputs | What it does |
 |---|---|---|---|---|
-| 3.1 | `notebooks/31_stage1_map.ipynb` | `map-segmentadores` | 1.1, 2.1 | Mask and box mAP (COCO); cache of instances and pixel confusion matrices |
-| 3.2 | `notebooks/32_stage1_identification_iou05.ipynb` | `f1-iou05` | 1.1, 2.1, 3.1 | FDI identification with IoU > 0.5 (main criterion) and sensitivity to the criterion |
-| 3.3 | `notebooks/33_stage1_box_iou.ipynb` | `iou-caja-segmentadores` | 1.1, 2.1, 3.1 | Box IoU per tooth |
-| 3.4 | `notebooks/34_stage1_dice_raw_yolo.ipynb` | `dice-yolo-crudo` | 1.1, 2.1, 3.1 | Dice of YOLO11m-seg from raw instances |
-| 3.5 | `notebooks/35_stage1_dice_no_third_molars.ipynb` | `dice-sin-terceros-molares` | 1.1, 2.1, 3.1 | Dice without third molars |
-| 3.6 | `notebooks/36_stage1_error_analysis.ipynb` | `errores-segmentacion-v3` | 1.1, 2.1, 3.1, 3.2 | Wrong number, insufficient contour, not detected; mixed dentition |
-| 3.7 | `notebooks/37_stage2_analysis.ipynb` | `analisis-icdas-v4` | 1.3, 2.2 | Classifier selection by validation, confusion matrices, ROC, calibration, Grad-CAM, efficiency |
-| 3.8 | `notebooks/38_stage2_rereading_sensitivity.ipynb` | `sensibilidad-relectura-v4` | 1.3, 2.2 | Sensitivity analysis of the model-guided re-reading |
+| 3.1 | `31_stage1_map.ipynb` | `map-segmentadores` | 1.1, 2.1 | Mask and box mAP (COCO); cache of instances and pixel confusion matrices |
+| 3.2 | `32_stage1_identification_iou05.ipynb` | `f1-iou05` | 1.1, 2.1, 3.1 | FDI identification with IoU > 0.5 (main criterion) and sensitivity to the criterion |
+| 3.3 | `33_stage1_box_iou.ipynb` | `iou-caja-segmentadores` | 1.1, 2.1, 3.1 | Box IoU per tooth |
+| 3.4 | `34_stage1_dice_raw_yolo.ipynb` | `dice-yolo-crudo` | 1.1, 2.1, 3.1 | Dice of YOLO11m-seg from raw instances |
+| 3.5 | `35_stage1_dice_no_third_molars.ipynb` | `dice-sin-terceros-molares` | 1.1, 2.1, 3.1 | Dice without third molars |
+| 3.6 | `36_stage1_error_analysis.ipynb` | `errores-segmentacion-v3` | 1.1, 2.1, 3.1, 3.2 | Wrong number, insufficient contour, not detected; mixed dentition |
+| 3.7 | `37_stage2_analysis.ipynb` | `analisis-icdas-v4` | 1.3, 2.2 | Classifier selection by validation, confusion matrices, ROC, calibration, Grad-CAM, efficiency |
+| 3.8 | `38_stage2_rereading_sensitivity.ipynb` | `sensibilidad-relectura-v4` | 1.3, 2.2 | Sensitivity analysis of the model-guided re-reading |
 
 ### 4. Pipeline (GPU)
 | # | Notebook | Kaggle notebook | Inputs | What it does |
 |---|---|---|---|---|
-| 4.1 | `notebooks/41_chained_evaluation_and_demo.ipynb` | `pipeline-icdas-v4` | source photographs; 1.1, 1.2, 1.3, 2.1, 2.2 | Chained evaluation (908 teeth, 68 children), odontograms and demonstration on the reserved children |
+| 4.1 | `41_chained_evaluation_and_demo.ipynb` | `pipeline-icdas-v4` | source photographs; 1.1, 1.2, 1.3, 2.1, 2.2 | Chained evaluation (908 teeth, 68 children), odontograms and demonstration on the reserved children |
 
 ### 5. Supplementary tables and data package
 | # | Notebook | Kaggle notebook | Inputs | What it does |
 |---|---|---|---|---|
-| 5.1 | `notebooks/51_additional_file_3.ipynb` | `additional-file-3` | outputs of 2.1–4.1 | Builds Additional file 3 (.xlsx) |
-| 5.2 | `notebooks/52_zenodo_package.ipynb` | `paquete-zenodo` | outputs of 1.1–4.1 | Builds the files of the Zenodo record and runs the reproduction and privacy checks |
+| 5.1 | `51_additional_file_3.ipynb` | `additional-file-3` | outputs of 2.1–4.1 | Builds Additional file 3 (.xlsx) |
+| 5.2 | `52_zenodo_package.ipynb` | `paquete-zenodo` | outputs of 1.1–4.1 | Builds the files of the Zenodo record and runs the reproduction and privacy checks |
 
 ## Reproducing the results without training
 
