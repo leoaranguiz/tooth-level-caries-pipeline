@@ -13,7 +13,7 @@ Code of the article:
 | What | Where |
 |---|---|
 | Source photographs (Ahmed et al., CC BY 4.0) | https://doi.org/10.5281/zenodo.14827784 |
-| Tooth masks, labels, folds and out-of-fold predictions of this study (CC BY 4.0) | Zenodo, DOI to be added |
+| Tooth masks, labels, folds and out-of-fold predictions of this study (CC BY 4.0) | https://doi.org/10.5281/zenodo.24383687 |
 | Trained weights | Not published; available from the corresponding author on reasonable request |
 
 No photograph, image crop or model weight is stored in this repository, and the notebook outputs were cleared.
